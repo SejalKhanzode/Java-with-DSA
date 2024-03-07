@@ -1,15 +1,17 @@
 package Searching;
 
-import java.util.Scanner;
-
-public class Binary_search {
+public class Ceiling {
     public static void main(String[] args) {
-        int[] arr = {5,7,7,7,7,8,8,10};
+        int[] arr = { 2, 3, 5, 9, 14, 16, 18 };
         int size = arr.length;
-       int ans = binary(arr,size , 7);
+        int target = 15;
+        int index = ceiling(arr, size, target);
+
+            System.out.println("Target ceiling value is at index " + index);
+        
     }
 
-    static int binary(int[] arr, int size, int target) {
+    static int ceiling(int[] arr, int size, int target) {
         int start = 0;
         int end = size - 1;
         int mid = start + (end - start) / 2;
@@ -26,6 +28,6 @@ public class Binary_search {
             mid = start + (end - start) / 2;
         }
 
-        return -1;
+        return start;
     }
 }
